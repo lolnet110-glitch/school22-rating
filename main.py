@@ -5,7 +5,7 @@ import sqlite3
 from pathlib import Path
 from typing import Optional
 
-DB_PATH = Path(file).parent / "school22.db"
+DB_PATH = Path(__file__).parent / "school22.db"
 
 app = FastAPI(title="School 22 Rating API")
 
