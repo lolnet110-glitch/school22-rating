@@ -10,16 +10,12 @@ DB_PATH = Path(__file__).parent / "school22.db"
 app = FastAPI(title="School 22 Rating API")
 
 app.add_middleware(
-CORSMiddleware,
-allow_origins=[
-"https://school22-admin.vercel.app",
-"https://school22-rating-site.vercel.app",
-],
-allow_credentials=True,
-allow_methods=[""],
-allow_headers=[""],
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
-
 
 def db():
     connection = sqlite3.connect(DB_PATH)
