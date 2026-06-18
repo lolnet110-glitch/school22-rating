@@ -1,12 +1,24 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import sqlite3
 from pathlib import Path
 from typing import Optional
 
-DB_PATH = Path(__file__).parent / "school22.db"
+DB_PATH = Path(file).parent / "school22.db"
 
 app = FastAPI(title="School 22 Rating API")
+
+app.add_middleware(
+CORSMiddleware,
+allow_origins=[
+"https://school22-admin.vercel.app",
+"https://school22-rating-site.vercel.app",
+],
+allow_credentials=True,
+allow_methods=[""],
+allow_headers=[""],
+)
 
 
 def db():
