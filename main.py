@@ -561,7 +561,7 @@ def delete_subcategory(subcategory_id: int):
     connection.close()
 
     return {"message": "Подкатегория удалена в архив"}
-  @app.put("/api/classes/{class_id}/category-scores/{category_id}")
+@app.put("/api/classes/{class_id}/category-scores/{category_id}")
 def set_class_category_score(class_id: int, category_id: int, score: ClassCategoryScoreUpdate):
     connection = db()
     cursor = connection.cursor()
@@ -765,7 +765,7 @@ def delete_uniform_check(check_id: int):
     connection.close()
 
     return {"message": "Проверка формы удалена"}
-  @app.get("/api/ratings/groups/{group_id}")
+@app.get("/api/ratings/groups/{group_id}")
 def get_group_rating(group_id: int):
     connection = db()
     cursor = connection.cursor()
