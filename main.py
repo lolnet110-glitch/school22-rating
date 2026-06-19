@@ -259,7 +259,9 @@ class UniformCheckUpdate(BaseModel):
     check_date: Optional[str] = None
     without_uniform: Optional[int] = None
     comment: Optional[str] = None
-  @app.get("/")
+
+
+@app.get("/")
 def home():
     return {
         "message": "API рейтинга Школы №22 работает на Supabase PostgreSQL",
